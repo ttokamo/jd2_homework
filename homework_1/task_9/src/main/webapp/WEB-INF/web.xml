@@ -1,0 +1,22 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                 http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0" metadata-complete="true">
+
+    <servlet>
+        <servlet-name>numberOfVisitServlet</servlet-name>
+        <servlet-class>web.NumberOfVisitorsServlet</servlet-class>
+    </servlet>
+
+    <context-param>
+        <param-name>visitorsLog</param-name>
+        <param-value>.\number-of-visitors.txt</param-value>
+    </context-param>
+
+    <servlet-mapping>
+        <servlet-name>numberOfVisitServlet</servlet-name>
+        <url-pattern>/count</url-pattern>
+    </servlet-mapping>
+
+</web-app>

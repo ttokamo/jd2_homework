@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>task_8</module>
+        <module>task_9</module>
     </modules>
 
     <dependencies>
