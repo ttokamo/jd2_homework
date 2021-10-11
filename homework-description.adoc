@@ -3,6 +3,16 @@
 
 *Тема 2:* Сервлеты. Задания: 8, 9.
 
+`task_8` *http://localhost:8080/task8/first*
+
+`task_9` *http://localhost:8080/task9/count*
+
 *Тема 3:* Обработка данных сервлетами. Задания 10, 11, 12.
+
+`task_10` *http://localhost:8080/task10/*
+
+`task_11` *http://localhost:8080/task11/info*
+
+`task_12` *http://localhost:8080/task12/count-image*
 
 '''
