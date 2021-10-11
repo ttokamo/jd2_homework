@@ -4,7 +4,6 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -15,7 +14,7 @@ public class PersonalInfoServlet extends HttpServlet {
         try {
             PrintWriter out = resp.getWriter();
             String nameRegex = "[a-zA-Z]+"; // Проверка на содержание только букв в имени
-            String numberRegex = "[0-9]+"; // Проверка на содержание только цифр в номере
+            String numberRegex = "[0-9]+"; // Проверка на содержание только цифр в номере (Без поддержки формата)
             String emailRegex = "^([a-z0-9_-]+\\.)*[a-z0-9_-]+@[a-z0-9_-]+(\\.[a-z0-9_-]+)*\\.[a-z]{2,6}$"; // Псевдо проверка на правильность ввода почты
             String name = req.getParameter("name");
             String number = req.getParameter("number");
