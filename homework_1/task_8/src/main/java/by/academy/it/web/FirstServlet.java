@@ -1,4 +1,4 @@
-package web;
+package by.academy.it.web;
 
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
