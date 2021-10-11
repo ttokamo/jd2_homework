@@ -3,7 +3,6 @@ package by.academy.it.web;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
 import java.io.*;
 
 public class NumberOfVisitorsServlet extends HttpServlet {
