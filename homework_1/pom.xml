@@ -13,6 +13,7 @@
         <module>task_9</module>
         <module>task_10</module>
         <module>task_11</module>
+        <module>task_12</module>
     </modules>
 
     <dependencies>
