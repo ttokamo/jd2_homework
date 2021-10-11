@@ -1,4 +1,4 @@
-package web;
+package by.academy.it.web;
 
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -10,19 +10,23 @@ public class NumberOfVisitorsServlet extends HttpServlet {
     private String path;
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        PrintWriter out = resp.getWriter();
-        path = getServletContext().getInitParameter("visitorsLog");
-        int count;
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
+        try {
+            PrintWriter out = resp.getWriter();
+            path = getServletContext().getInitParameter("visitorsLog");
+            int count;
 
-        if (readNumberOfVisitorsFromFile() != null) {
-            count = Integer.parseInt(readNumberOfVisitorsFromFile());
-        } else {
-            count = 0;
+            if (readNumberOfVisitorsFromFile() != null) {
+                count = Integer.parseInt(readNumberOfVisitorsFromFile());
+            } else {
+                count = 0;
+            }
+            count++;
+            writeNumberOfVisitorsToFile(count);
+            out.println("<html><center><h1>Number of visitors: " + count + "</h1></center></html>");
+        } catch (IOException ex) {
+            ex.printStackTrace();
         }
-        count++;
-        writeNumberOfVisitorsToFile(count);
-        out.println("<h1>Number of visitors: " + count + "</h1>");
     }
 
     private void writeNumberOfVisitorsToFile(int count) {

@@ -6,7 +6,7 @@
 
     <servlet>
         <servlet-name>numberOfVisitServlet</servlet-name>
-        <servlet-class>web.NumberOfVisitorsServlet</servlet-class>
+        <servlet-class>by.academy.it.web.NumberOfVisitorsServlet</servlet-class>
     </servlet>
 
     <context-param>
@@ -18,5 +18,4 @@
         <servlet-name>numberOfVisitServlet</servlet-name>
         <url-pattern>/count</url-pattern>
     </servlet-mapping>
-
 </web-app>
