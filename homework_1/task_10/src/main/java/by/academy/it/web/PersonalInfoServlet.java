@@ -20,7 +20,9 @@ public class PersonalInfoServlet extends HttpServlet {
             String number = req.getParameter("number");
             String email = req.getParameter("email");
 
-            if (name.matches(nameRegex) && number.matches(numberRegex) && email.matches(emailRegex)) {
+            if ((!name.equals("") && name.matches(nameRegex))
+                    && (!number.equals("") && number.matches(numberRegex))
+                    || (!email.equals("") && email.matches(emailRegex))) {
                 out.println("Name: " + name);
                 out.println("Telephone number: " + number);
                 out.println("Email: " + email);
