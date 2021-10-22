@@ -5,14 +5,14 @@ import java.sql.*;
 public class ExpensesDao {
     private final DataSource dataSource = new DataSource();
 
-    public void putExpenses(String num, String date, String value, String receiver) throws SQLException {
+    public void putExpenses(String num, String date, String receiver, String value) throws SQLException {
         Connection con = dataSource.getConnection();
         Statement st = con.createStatement();
-        st.executeUpdate("INSERT INTO expenses (num, paydate, value, receiver) VALUES ("
+        st.executeUpdate("INSERT INTO expenses (num, paydate, receiver, value) VALUES ("
                 + num + ",'"
                 + date + "',"
-                + value + ","
-                + receiver + ");"
+                + receiver + ","
+                + value + ");"
         );
         st.close();
         con.close();

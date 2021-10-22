@@ -34,7 +34,7 @@
                             <username>root</username>
                             <password>root</password>
                             <driver>com.mysql.cj.jdbc.Driver</driver>
-                            <changeLogFile>src/main/resources/changelog-numbers.xml</changeLogFile>
+                            <changeLogFile>src/main/resources/changelog-expenses.xml</changeLogFile>
                         </configuration>
                     </execution>
                 </executions>
