@@ -5,7 +5,7 @@ import java.sql.*;
 public class ExpensesDaoTask5 {
     private final DataSourceTask5 dataSource = new DataSourceTask5();
 
-    public void putExpenses(String num, String date, String receiver, String value) throws SQLException {
+    public void addExpense(String num, String date, String receiver, String value) throws SQLException {
         Connection con = dataSource.getConnection();
         PreparedStatement st = con.prepareStatement("INSERT INTO expenses VALUES (?, ?, ?, ?);");
 

@@ -8,7 +8,7 @@ public class MainTask5 {
         try {
             ExpensesDaoTask5 expensesDao = new ExpensesDaoTask5();
             if (args.length == 4) {
-                expensesDao.putExpenses(args[0], args[1], args[2], args[3]);
+                expensesDao.addExpense(args[0], args[1], args[2], args[3]);
                 expensesDao.printTable();
             } else {
                 System.out.println("Invalid number of parameters");
