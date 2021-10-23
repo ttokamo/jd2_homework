@@ -14,13 +14,13 @@
             value dec
             );
             CREATE TABLE IF NOT EXISTS receivers (
-            num int,
-            name varchar (255)
+            num int UNIQUE,
+            name varchar (255) UNIQUE
             );
-            INSERT INTO ListExpenses.receivers (num, name) VALUES (1, 'Korona');
-            INSERT INTO ListExpenses.receivers (num, name) VALUES (2, 'Euroopt');
-            INSERT INTO ListExpenses.receivers (num, name) VALUES (3, 'Vitalur');
-            INSERT INTO ListExpenses.receivers (num, name) VALUES (4, 'Sosedi');
+            INSERT IGNORE INTO ListExpenses.receivers (num, name) VALUES (1, 'Korona');
+            INSERT IGNORE INTO ListExpenses.receivers (num, name) VALUES (2, 'Euroopt');
+            INSERT IGNORE INTO ListExpenses.receivers (num, name) VALUES (3, 'Vitalur');
+            INSERT IGNORE INTO ListExpenses.receivers (num, name) VALUES (4, 'Sosedi');
         </sql>
     </changeSet>
 </databaseChangeLog>
