@@ -21,15 +21,15 @@ public class PreparedExpensesDao {
 
     public void printTable() throws SQLException {
         Connection con = dataSource.getConnection();
-        PreparedStatement st = con.prepareStatement("SELECT * FROM expenses;");
+        PreparedStatement st = con.prepareStatement("SELECT paydate, value, name " +
+                "FROM expenses,receivers WHERE receiver=receivers.num;");
         ResultSet rs = st.executeQuery();
 
         while (rs.next()) {
-            System.out.println(
-                    rs.getString(1) + " "
-                    + rs.getDate(2) + " "
-                    + rs.getString(3) + " "
-                    + rs.getDouble(4) + " "
+            System.out.println("| "
+                    + rs.getDate("paydate") + " | "
+                    + rs.getDouble("value") + " | "
+                    + rs.getString("name") + " |"
             );
         }
 
