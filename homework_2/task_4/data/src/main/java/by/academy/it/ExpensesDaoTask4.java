@@ -5,7 +5,7 @@ import java.sql.*;
 public class ExpensesDaoTask4 {
     private final DataSourceTask4 dataSourceTask4 = new DataSourceTask4();
 
-    public void putExpenses(String num, String date, String receiver, String value) throws SQLException {
+    public void addExpense(String num, String date, String receiver, String value) throws SQLException {
         Connection con = dataSourceTask4.getConnection();
         Statement st = con.createStatement();
 
