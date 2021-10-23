@@ -23,14 +23,14 @@ public class ExpensesDao {
     public void printTable() throws SQLException {
         Connection con = dataSource.getConnection();
         Statement st = con.createStatement();
-        ResultSet rs = st.executeQuery("SELECT * FROM expenses;");
+        ResultSet rs = st.executeQuery("SELECT paydate, value, name FROM expenses, " +
+                "receivers WHERE receiver=receivers.num;");
 
         while (rs.next()) {
-            System.out.println(
-                    rs.getString(1) + " "
-                    + rs.getString(2) + " "
-                    + rs.getString(3) + " "
-                    + rs.getDouble(4) + " "
+            System.out.println("| "
+                    + rs.getDate("paydate") + " | "
+                    + rs.getDouble("value") + " | "
+                    + rs.getString("name") + " | "
             );
         }
 
