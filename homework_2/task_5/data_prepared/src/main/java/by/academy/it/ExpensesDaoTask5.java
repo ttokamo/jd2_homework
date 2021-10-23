@@ -2,8 +2,8 @@ package by.academy.it;
 
 import java.sql.*;
 
-public class PreparedExpensesDao {
-    private final PreparedDataSource dataSource = new PreparedDataSource();
+public class ExpensesDaoTask5 {
+    private final DataSourceTask5 dataSource = new DataSourceTask5();
 
     public void putExpenses(String num, String date, String receiver, String value) throws SQLException {
         Connection con = dataSource.getConnection();

@@ -1,12 +1,12 @@
 package by.academy.it.main;
 
-import by.academy.it.PreparedExpensesDao;
+import by.academy.it.ExpensesDaoTask5;
 import java.sql.SQLException;
 
-public class PreparedMain {
+public class MainTask5 {
     public static void main(String[] args) {
         try {
-            PreparedExpensesDao expensesDao = new PreparedExpensesDao();
+            ExpensesDaoTask5 expensesDao = new ExpensesDaoTask5();
             if (args.length == 4) {
                 expensesDao.putExpenses(args[0], args[1], args[2], args[3]);
                 expensesDao.printTable();

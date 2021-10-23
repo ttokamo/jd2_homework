@@ -36,7 +36,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>by.academy.it.main.PreparedMain</mainClass>
+                            <mainClass>by.academy.it.main.MainTask5</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
