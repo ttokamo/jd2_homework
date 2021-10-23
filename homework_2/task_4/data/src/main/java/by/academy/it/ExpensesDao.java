@@ -8,12 +8,14 @@ public class ExpensesDao {
     public void putExpenses(String num, String date, String receiver, String value) throws SQLException {
         Connection con = dataSource.getConnection();
         Statement st = con.createStatement();
+
         st.executeUpdate("INSERT INTO expenses (num, paydate, receiver, value) VALUES ("
                 + num + ",'"
                 + date + "',"
                 + receiver + ","
                 + value + ");"
         );
+
         st.close();
         con.close();
     }
