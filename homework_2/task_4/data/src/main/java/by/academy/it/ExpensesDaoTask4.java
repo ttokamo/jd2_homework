@@ -24,7 +24,7 @@ public class ExpensesDaoTask4 {
         String sql =
                 "SELECT paydate, value, name " +
                 "FROM expenses, receivers " +
-                "WHERE receiver=receivers.num;";
+                "WHERE receiver = receivers.num;";
         ResultSet rs = st.executeQuery(sql);
 
         while (rs.next()) {
