@@ -8,7 +8,7 @@
     <changeSet id="1" author="ttokamo">
         <sql>
             CREATE TABLE IF NOT EXISTS expenses (
-            num int,
+            num int PRIMARY KEY AUTO_INCREMENT,
             paydate date,
             receiver int,
             value dec

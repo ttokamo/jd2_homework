@@ -5,14 +5,14 @@ import java.sql.*;
 public class ExpensesDaoTask5 {
     private final DataSourceTask5 dataSource = new DataSourceTask5();
 
-    public void addExpense(String num, String date, String receiver, String value) throws SQLException {
+    public void addExpense(String date, String receiver, Double value) throws SQLException {
         Connection con = dataSource.getConnection();
-        PreparedStatement st = con.prepareStatement("INSERT INTO expenses VALUES (?, ?, ?, ?);");
+        String sql = "INSERT INTO expenses (paydate, receiver, value) VALUES (?, ?, ?);";
+        PreparedStatement st = con.prepareStatement(sql);
 
-        st.setString(1, num);
-        st.setString(2, date);
-        st.setString(3, receiver);
-        st.setString(4, value);
+        st.setDate(1, Date.valueOf(date));
+        st.setString(2, receiver);
+        st.setDouble(3, value);
 
         st.executeUpdate();
         st.close();
@@ -21,8 +21,11 @@ public class ExpensesDaoTask5 {
 
     public void printTable() throws SQLException {
         Connection con = dataSource.getConnection();
-        PreparedStatement st = con.prepareStatement("SELECT paydate, value, name " +
-                "FROM expenses,receivers WHERE receiver=receivers.num;");
+        String sql =
+                "SELECT paydate, value, name " +
+                "FROM expenses,receivers " +
+                "WHERE receiver = receivers.num;";
+        PreparedStatement st = con.prepareStatement(sql);
         ResultSet rs = st.executeQuery();
 
         while (rs.next()) {
