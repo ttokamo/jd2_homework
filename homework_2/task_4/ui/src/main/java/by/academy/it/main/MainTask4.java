@@ -7,8 +7,8 @@ public class MainTask4 {
     public static void main(String[] args) {
         try {
             ExpensesDaoTask4 expensesDaoTask4 = new ExpensesDaoTask4();
-            if (args.length == 4) {
-                expensesDaoTask4.addExpense(args[0], args[1], args[2], args[3]);
+            if (args.length == 3) {
+                expensesDaoTask4.addExpense(args[0], args[1], Double.valueOf(args[2]));
                 expensesDaoTask4.printTable();
             } else {
                 System.out.println("Invalid number of parameters");
