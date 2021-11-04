@@ -1,0 +1,16 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <changeSet id="1" author="averamkovich">
+        <sql>
+            CREATE TABLE IF NOT EXISTS persons (
+            id int PRIMARY KEY AUTO_INCREMENT,
+            name varchar(100) NOT NULL,
+            surname varchar(100) NOT NULL,
+            age int
+            );
+        </sql>
+    </changeSet>
+</databaseChangeLog>
