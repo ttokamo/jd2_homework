@@ -4,20 +4,20 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table (name = "persons")
+@Table(name = "persons")
 public class Person implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column (name = "id")
+    @Column(name = "id")
     private Integer id;
 
-    @Column (name = "name")
+    @Column(name = "name")
     private String name;
 
-    @Column (name = "surname")
+    @Column(name = "surname")
     private String surname;
 
-    @Column (name = "age")
+    @Column(name = "age")
     private Integer age;
 
     public Integer getId() {
@@ -47,6 +47,7 @@ public class Person implements Serializable {
     public void setAge(Integer age) {
         this.age = age;
     }
+
 
     @Override
     public String toString() {

@@ -5,29 +5,63 @@ import by.academy.it.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class PersonDao {
 
-    public void addNewPerson(Person person) {
+    public Serializable addNewPerson(Person person) {
         Session session = HibernateUtil.getSession();
-        Transaction transaction = session.beginTransaction();
-        session.save(person);
-        transaction.commit();
-        session.close();
+        Serializable id = null;
+        Transaction transaction = null;
+
+        try {
+            transaction = session.beginTransaction();
+            id = session.save(person);
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+
+        return id;
     }
 
     public void deletePerson(Person person) {
         Session session = HibernateUtil.getSession();
-        Transaction transaction = session.beginTransaction();
-        session.delete(person);
-        transaction.commit();
-        session.close();
+        Transaction transaction = null;
+
+        try {
+            transaction = session.beginTransaction();
+            session.delete(person);
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
     }
 
-    public Person findPerson(int id) {
+    public void addAndDeletePerson(Person person) {
+        addNewPerson(person);
+        deletePerson(person);
+    }
+
+    public Person findPersonWithGet(int id) {
         Session session = HibernateUtil.getSession();
         return session.get(Person.class, id);
+    }
+
+    public Person findPersonWithLoad(int id) {
+        Session session = HibernateUtil.getSession();
+        return session.load(Person.class, id);
     }
 
     public List<Person> readPersons() {
