@@ -1,4 +1,4 @@
-package by.academy.it.input;
+package by.academy.it.util;
 
 import java.util.Scanner;
 

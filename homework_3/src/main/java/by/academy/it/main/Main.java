@@ -1,7 +1,7 @@
 package by.academy.it.main;
 
 import by.academy.it.dao.PersonDao;
-import by.academy.it.input.InputUtil;
+import by.academy.it.util.InputUtil;
 import by.academy.it.pojo.Person;
 import by.academy.it.util.MessagesUtil;
 import org.hibernate.ObjectNotFoundException;
