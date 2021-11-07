@@ -13,4 +13,28 @@
             );
         </sql>
     </changeSet>
+    <changeSet id="2" author="ttokamo">
+        <sql>
+            CREATE TABLE IF NOT EXISTS event (
+            date DATETIME,
+            event_name varchar(20)
+            );
+        </sql>
+    </changeSet>
+    <changeSet id="3" author="ttokamo">
+        <sql>
+            DROP TRIGGER IF EXISTS add_person;
+            CREATE TRIGGER add_person
+            AFTER INSERT ON persons
+            FOR EACH ROW
+            INSERT INTO event (date, event_name) VALUES (NOW(), 'Added');
+        </sql>
+        <sql>
+            DROP TRIGGER IF EXISTS delete_person;
+            CREATE TRIGGER delete_person
+            AFTER DELETE ON persons
+            FOR EACH ROW
+            INSERT INTO event (date, event_name) VALUES (NOW(), 'Deleted');
+        </sql>
+    </changeSet>
 </databaseChangeLog>
