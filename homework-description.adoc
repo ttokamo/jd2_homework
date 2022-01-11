@@ -5,7 +5,7 @@
 
 `task_8` *http://localhost:8080/task8/first*
 
-`task_9` *http://localhost:8080/task9/count*
+`task_9` *http://localhost:8080/task9_10/count*
 
 *Тема 3:* Обработка данных сервлетами. Задания 10, 11, 12.
 
@@ -39,3 +39,18 @@
 `task_2` `готово`
 
 `task_3` `готово`
+
+'''
+`homework_5`
+
+*Тема 1*: Spring. Задания: 2, 8, 9, 10.
+
+`task_2` `готово`
+
+`task_8` `готово`
+
+`task_9` `готово`
+
+`task_10` `готово`
+
+'''
